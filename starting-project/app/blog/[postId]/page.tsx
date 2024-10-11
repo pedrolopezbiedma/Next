@@ -1,4 +1,4 @@
-const Post = ({ params }) => {
+const Post = (params: { postId: string }) => {
 	const { postId } = params;
 	return (
 		<main>
