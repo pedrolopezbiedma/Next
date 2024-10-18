@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
@@ -10,7 +12,6 @@ import macncheeseImg from "@/assets/macncheese.jpg";
 import pizzaImg from "@/assets/pizza.jpg";
 import schnitzelImg from "@/assets/schnitzel.jpg";
 import tomatoSaladImg from "@/assets/tomato-salad.jpg";
-import classes from "./image-slideshow.module.css";
 
 const images = [
 	{ image: burgerImg, alt: "A delicious, juicy burger" },
@@ -41,7 +42,7 @@ const Slideshow = () => {
 				<Image
 					key={index}
 					src={image.image}
-					className={index === currentImageIndex ? classes.active : ""}
+					className={index === currentImageIndex ? Styles.active : ""}
 					alt={image.alt}
 				/>
 			))}
