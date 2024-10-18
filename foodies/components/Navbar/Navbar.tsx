@@ -4,6 +4,7 @@ import Background from "./Background/Background";
 
 import logo from "@/assets/logo.png";
 import Styles from "./Navbar.module.css";
+import NavbarLink from "./Link/Link";
 
 const Navbar = () => {
 	return (
@@ -17,10 +18,10 @@ const Navbar = () => {
 				<nav className={Styles.nav}>
 					<ul>
 						<li>
-							<Link href="/meals">Browse Meals</Link>
+							<NavbarLink href="/meals">Meals</NavbarLink>
 						</li>
 						<li>
-							<Link href="/community">Community</Link>
+							<NavbarLink href="/community">Community</NavbarLink>
 						</li>
 					</ul>
 				</nav>
