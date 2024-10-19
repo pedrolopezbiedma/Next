@@ -1,9 +1,3 @@
---- Video 113 ---
-- Define a not.found page at global level wht the following content:
-    -  main with class not-found ( also in globals )
-        - h1 with Not found
-        - p with the text Unfortunately, we could not find the requested page or resource.
-
 --- Video 114 ---
 - Lets go now to the MealDetails page.
 - Lets go with the content for the page
