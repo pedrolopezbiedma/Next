@@ -1,4 +1,6 @@
 import Image from "next/image";
+import { notFound } from "next/navigation";
+
 import { getMealById } from "backend/meals";
 
 import Styles from "./page.module.css";
@@ -6,6 +8,10 @@ import Styles from "./page.module.css";
 const MealPage = ({ params }) => {
 	const { mealId } = params;
 	const meal = getMealById(mealId);
+
+	if (!meal) {
+		notFound();
+	}
 	meal.instructions = meal.instructions.replace(/\n/g, "<br />");
 	return (
 		<>

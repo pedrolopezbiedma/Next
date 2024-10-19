@@ -1,8 +1,3 @@
---- Video 115 ---
-- If you try to search for a meal that does not exist, you will see the general not found page. But we want to create an special one for tnis case.
-- For this, we will check if there is a meal and if not, we will call notFOund from next/navigation
-    - In that case it will show the general not found so copy the one already existing, and place it within the proper scope modifying a bit the copies so it makes sense.
-
 --- Video 116 ---
 - now, we will work in the page to create a new recipe.
     - Download the content of the component and place it within your tsx file ( Also the styles ).
