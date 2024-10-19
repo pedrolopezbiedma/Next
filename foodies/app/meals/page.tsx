@@ -12,7 +12,7 @@ const MealsPage = async () => {
 			<header className={Styles.header}>
 				<h2>
 					Delicious Meals created
-					<span className={Styles.highlight}>by you</span>
+					<span className={Styles.highlight}> by you</span>
 				</h2>
 				<p>
 					Choose your favorite recipe and cook it yourself. It is easy and fun!
