@@ -1,9 +1,12 @@
 import Link from "next/link";
 import MealsGrid from "@/components/Meals/MealsGrid/MealsGrid";
-
+import { getMeals } from "backend/meals";
+import type { Meal } from "types/meal";
 import Styles from "./page.module.css";
 
-const MealsPage = () => {
+const MealsPage = async () => {
+	const meals: Meal[] = await getMeals();
+
 	return (
 		<>
 			<header className={Styles.header}>
@@ -19,17 +22,7 @@ const MealsPage = () => {
 				</p>
 			</header>
 			<main>
-				<MealsGrid
-					meals={[
-						{
-							title: "test",
-							slug: "1",
-							image: "",
-							summary: "summary",
-							creator: "pepe",
-						},
-					]}
-				/>
+				<MealsGrid meals={meals} />
 			</main>
 		</>
 	);
