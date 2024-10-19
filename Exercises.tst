@@ -1,8 +1,3 @@
---- Video 116 ---
-- now, we will work in the page to create a new recipe.
-    - Download the content of the component and place it within your tsx file ( Also the styles ).
-    - Test that everything is working fine.
-
 --- Video 117 ---
 - We want to work now in the Image Picker, for it we will create a new component within the components folder.
     - Download the styles for the image picker and place them.
