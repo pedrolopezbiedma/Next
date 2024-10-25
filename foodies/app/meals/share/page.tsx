@@ -1,7 +1,22 @@
 import ImagePicker from "@/components/ImagePicker/ImagePicker";
 import Styles from "./page.module.css";
+import type { Meal } from "types/meal";
 
 const SharePage = () => {
+	const submitForm = async (formData) => {
+		"use server";
+		const meal: Meal = {
+			creator: formData.get("name"),
+			creator_email: formData.get("email"),
+			title: formData.get("name"),
+			summary: formData.get("summary"),
+			instructions: formData.get("instructions"),
+			image: formData.get("image"),
+		};
+
+		console.log("meal", meal);
+	};
+
 	return (
 		<>
 			<header className={Styles.header}>
@@ -11,7 +26,7 @@ const SharePage = () => {
 				<p>Or any other meal you feel needs sharing!</p>
 			</header>
 			<main className={Styles.main}>
-				<form className={Styles.form}>
+				<form className={Styles.form} action={submitForm}>
 					<div className={Styles.row}>
 						<p>
 							<label htmlFor="name">Your name</label>
