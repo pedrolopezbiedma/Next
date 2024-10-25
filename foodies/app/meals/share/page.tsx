@@ -1,3 +1,4 @@
+import ImagePicker from "@/components/ImagePicker/ImagePicker";
 import Styles from "./page.module.css";
 
 const SharePage = () => {
@@ -38,7 +39,7 @@ const SharePage = () => {
 							required
 						/>
 					</p>
-					IMAGE PICKER
+					<ImagePicker label="Image" name="image" />
 					<p className={Styles.actions}>
 						<button type="submit">Share Meal</button>
 					</p>
