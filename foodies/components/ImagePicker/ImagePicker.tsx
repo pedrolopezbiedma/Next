@@ -14,12 +14,16 @@ const ImagePicker = ({ label, name }: ImagePickerProps) => {
 
 	const handleInputChange = (event) => {
 		const file = event.target.files[0];
-		const fileReader = new FileReader();
 
+		if (!file) {
+			setPickedImage(null);
+		}
+
+		// Read the uploaded image
+		const fileReader = new FileReader();
 		fileReader.onload = () => {
 			setPickedImage(fileReader.result);
 		};
-
 		fileReader.readAsDataURL(file);
 	};
 
@@ -46,6 +50,7 @@ const ImagePicker = ({ label, name }: ImagePickerProps) => {
 					className={Styles.input}
 					accept="image/png, image/jpeg"
 					onChange={handleInputChange}
+					required
 				/>
 				<button type="button" className={Styles.button} onClick={handleClick}>
 					Pick an image
