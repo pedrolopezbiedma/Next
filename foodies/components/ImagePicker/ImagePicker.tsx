@@ -1,6 +1,7 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import Image from "next/image";
 import Styles from "./ImagePicker.module.css";
 
 export interface ImagePickerProps {
@@ -8,7 +9,19 @@ export interface ImagePickerProps {
 	name: string;
 }
 const ImagePicker = ({ label, name }: ImagePickerProps) => {
+	const [pickedImage, setPickedImage] = useState(null);
 	const imageInputRef = useRef<HTMLInputElement>(null);
+
+	const handleInputChange = (event) => {
+		const file = event.target.files[0];
+		const fileReader = new FileReader();
+
+		fileReader.onload = () => {
+			setPickedImage(fileReader.result);
+		};
+
+		fileReader.readAsDataURL(file);
+	};
 
 	const handleClick = () => {
 		imageInputRef.current?.click();
@@ -18,6 +31,13 @@ const ImagePicker = ({ label, name }: ImagePickerProps) => {
 		<div className={Styles.picker}>
 			<label htmlFor={name}>{label}</label>
 			<div className={Styles.controls}>
+				<div className={Styles.preview}>
+					{pickedImage ? (
+						<Image src={pickedImage} alt="Meal preview" fill />
+					) : (
+						<p>No image picked yet</p>
+					)}
+				</div>
 				<input
 					ref={imageInputRef}
 					id={name}
@@ -25,6 +45,7 @@ const ImagePicker = ({ label, name }: ImagePickerProps) => {
 					type="file"
 					className={Styles.input}
 					accept="image/png, image/jpeg"
+					onChange={handleInputChange}
 				/>
 				<button type="button" className={Styles.button} onClick={handleClick}>
 					Pick an image
