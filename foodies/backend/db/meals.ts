@@ -1,5 +1,5 @@
 import sql from "better-sqlite3";
-import type { Meal } from "types/meal";
+import type { Meal } from "@/types/meal";
 
 const db = sql("meals.db");
 

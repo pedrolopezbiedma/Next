@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
-import { getMealById } from "backend/meals";
+import { getMealById } from "@/backend/db/meals";
 
 import Styles from "./page.module.css";
 

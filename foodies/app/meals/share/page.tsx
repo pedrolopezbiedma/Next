@@ -1,22 +1,8 @@
 import ImagePicker from "@/components/ImagePicker/ImagePicker";
+import { submitForm } from "@/backend/serverActions/meals";
 import Styles from "./page.module.css";
-import type { Meal } from "types/meal";
 
 const SharePage = () => {
-	const submitForm = async (formData) => {
-		"use server";
-		const meal: Meal = {
-			creator: formData.get("name"),
-			creator_email: formData.get("email"),
-			title: formData.get("name"),
-			summary: formData.get("summary"),
-			instructions: formData.get("instructions"),
-			image: formData.get("image"),
-		};
-
-		console.log("meal", meal);
-	};
-
 	return (
 		<>
 			<header className={Styles.header}>
