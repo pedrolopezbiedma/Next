@@ -12,19 +12,19 @@ const validateMeal = (meal: Meal) => {
 		meal.creator_email.trim() === "" ||
 		meal.creator_email.indexOf("@") === -1 ||
 		!meal.title ||
-		meal.title.trim() ||
+		meal.title.trim() === "" ||
 		!meal.summary ||
-		meal.summary.trim() ||
+		meal.summary.trim() === "" ||
 		!meal.instructions ||
-		meal.instructions.trim() ||
+		meal.instructions.trim() === "" ||
 		!meal.image ||
 		meal.image.size === 0
 	) {
-		throw new Error("Invalid meal data");
+		return true;
 	}
 };
 
-export const submitForm = async (formData) => {
+export const submitForm = async (prevState, formData) => {
 	const meal: Meal = {
 		creator: formData.get("name"),
 		creator_email: formData.get("email"),
@@ -34,7 +34,7 @@ export const submitForm = async (formData) => {
 		image: formData.get("image"),
 	};
 
-	validateMeal(meal);
+	if (validateMeal(meal)) return { message: "Invalid meal data" };
 
 	await createMeal(meal);
 	redirect("/meals");
