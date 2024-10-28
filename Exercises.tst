@@ -1,10 +1,3 @@
---- Video 125 ---
-
-- Right now we are not doing any validation when saving the meal, let's get that done.
-- The validation will be to check if the value is empty or if when trimming it, is empty string. And we do that for all fields. Also we check if there is no @ for the email. Also, we check that the image is empty and that its size  === 0
-    - If there is any validation error: throw new Error('Invalid input');
-- When testing, you'll notice that you are missing something in your project, create it so you can see the proper error.
-
 --- Video 127 ---
 
 - For some unknown reason, the React team decided to suddenly change this Hook's name to useActionState. In addition, it now must be imported from react instead of react-dom.
