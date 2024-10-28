@@ -1,7 +1,7 @@
 export interface Meal {
 	title: string;
 	slug?: string;
-	image: string;
+	image: any;
 	summary: string;
 	instructions: string;
 	creator: string;
