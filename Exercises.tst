@@ -1,7 +1,3 @@
---- Video 124 ---
-- We want to change the submit button while the submission is happening. For that, decouple the submit button into a new component and use there useFormStatus
-- We need to show a button with text Submitting... ( disabled ) if status is pending or....another one Share Meal if is not pending.
-
 --- Video 125 ---
 
 - Right now we are not doing any validation when saving the meal, let's get that done.
