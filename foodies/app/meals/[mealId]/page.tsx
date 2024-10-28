@@ -5,6 +5,15 @@ import { getMealById } from "@/backend/db/meals";
 
 import Styles from "./page.module.css";
 
+export async function generateMetadata({ params }) {
+	const { mealId } = params;
+	const meal = getMealById(mealId);
+	return {
+		title: meal.title,
+		description: meal.summary,
+	};
+}
+
 const MealPage = ({ params }) => {
 	const { mealId } = params;
 	const meal = getMealById(mealId);

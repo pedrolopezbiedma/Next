@@ -6,6 +6,11 @@ import FallbackLoading from "@/components/Loading/FallbackLoading/FallbackLoadin
 
 import Styles from "./page.module.css";
 
+export const metadata = {
+	title: "Meals",
+	description: "Browse the decliduous meals share by our vibrant community.",
+};
+
 const MealsPage = () => {
 	return (
 		<>
