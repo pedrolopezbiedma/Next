@@ -3,6 +3,7 @@
 import type { Meal } from "@/types/meal";
 import { createMeal } from "../db/meals";
 import { redirect } from "next/navigation";
+import { revalidatePath } from "next/cache";
 
 const validateMeal = (meal: Meal) => {
 	if (
@@ -37,5 +38,7 @@ export const submitForm = async (prevState, formData) => {
 	if (validateMeal(meal)) return { message: "Invalid meal data" };
 
 	await createMeal(meal);
+
+	revalidatePath("/meals", "page");
 	redirect("/meals");
 };
