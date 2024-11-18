@@ -1,0 +1,58 @@
+--- Video 232 ---
+- Convert the project to typescript.
+- Create a Homepage page
+    - Include a div with an h1 'The Home Page'
+
+--- Video 233 ---
+- Create a second route, the about
+- For the content:
+    general div
+        - h1 with the text The About page
+
+--- Video 234 ---
+- Create a portfolio/ route
+- For the content, the same than in the others but with updated name.
+- Also, convert the about to this kind of routes ( meaning, its contained within its own subroute)
+- Create another subroute within portfolio called 'list' with the same content.
+
+--- Video 235 ---
+- Create a dynamic path inside portfolio for a portfolio project page.
+- Same content as before
+
+--- Video 236 ---
+- Get access to the routing information and console.log the route and the dynamic value of the route.
+
+--- Video 237 ---
+- Create a clients subfolder.
+    - In that subfolder, create a dynamic route for each clientId
+        - In that route, include a route with the project from each client.
+         - In that route, a route for each clientproject details
+    /client should work.
+    /clients/1 should lead to client 1 projects
+    /clients/1/project1 should lead to client 1 project1
+
+--- Video 238 ---
+- Create a blog sub route
+    - Inside it, create a catch all route.
+    - Get and check how it works with console.log
+
+--- Video 239 ---
+- In the home page, create a bunch of ul with several list
+ - Create a route to the portfolio page and another one to the clients page
+
+--- Video 240 ---
+- In the clients page, we'll simulate several client with different names and we will create different routes.
+- now, create the list of clients as a variable, and loop over it.
+    - update the links now to work correctly
+
+--- Video 241 ---
+Nada
+
+--- Video 242 ---
+Create a button in any page and do a programatic navigation with it to any page.
+
+--- Video 243 ---
+Create an dummy error page and test that is working
+
+--- Video 244 & 245 ---
+Nothing
