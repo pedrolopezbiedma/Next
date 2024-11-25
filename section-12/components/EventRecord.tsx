@@ -1,6 +1,9 @@
-import Link from "next/link";
 import type { Event } from "../types";
 import Styles from "./EventRecord.module.css";
+import EventLink from "./EventLink";
+import AddressIcon from "../components/icons/address-icon";
+import DateIcon from "../components/icons/date-icon";
+import ArrowRightIcon from "../components/icons/arrow-right-icon";
 
 interface EventRecordProps {
 	event: Event;
@@ -21,14 +24,21 @@ const EventRecord = ({ event }: EventRecordProps) => {
 				<div className={Styles.summary}>
 					<h2>{event.title}</h2>
 					<div className={Styles.date}>
+						<DateIcon />
 						<time>{eventDate}</time>
 					</div>
 					<div className={Styles.address}>
+						<AddressIcon />
 						<address>{eventAddress}</address>
 					</div>
 				</div>
 				<div className={Styles.actions}>
-					<Link href={`/events/${event.id}`}>Explore Event</Link>
+					<EventLink href={`/events/${event.id}`}>
+						<span className={Styles.icon}>
+							Explore Event
+							<ArrowRightIcon />
+						</span>
+					</EventLink>
 				</div>
 			</div>
 		</li>
