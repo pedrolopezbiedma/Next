@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Event } from "../types";
+import Styles from "./EventRecord.module.css";
 
 interface EventRecordProps {
 	event: Event;
@@ -14,19 +15,19 @@ const EventRecord = ({ event }: EventRecordProps) => {
 	const eventAddress = event.location.replace(", ", "\n");
 
 	return (
-		<li key={event.id}>
+		<li key={event.id} className={Styles.item}>
 			<img src={event.image} alt="event details" />
-			<div>
-				<div>
+			<div className={Styles.content}>
+				<div className={Styles.summary}>
 					<h2>{event.title}</h2>
-					<div>
+					<div className={Styles.date}>
 						<time>{eventDate}</time>
 					</div>
-					<div>
+					<div className={Styles.address}>
 						<address>{eventAddress}</address>
 					</div>
 				</div>
-				<div>
+				<div className={Styles.actions}>
 					<Link href={`/events/${event.id}`}>Explore Event</Link>
 				</div>
 			</div>
