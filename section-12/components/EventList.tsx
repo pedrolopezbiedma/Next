@@ -9,9 +9,7 @@ const EventList = ({ events }: EventListProps) => {
 	return (
 		<ul>
 			{events.map((event: Event) => (
-				<li key={event.id}>
-					<EventRecord />
-				</li>
+				<EventRecord event={event} />
 			))}
 		</ul>
 	);
