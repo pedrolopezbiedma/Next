@@ -1,12 +1,20 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React from "react";
 
+const clients = [
+	{ id: "1", name: "Client One" },
+	{ id: "2", name: "Client Two" },
+	{ id: "3", name: "Client Three" },
+];
+
 const ClientsPage = () => {
-	const clients = [
-		{ id: "1", name: "Client One" },
-		{ id: "2", name: "Client Two" },
-		{ id: "3", name: "Client Three" },
-	];
+	const router = useRouter();
+	const handleClick = () => {
+		// router.push("/");
+		throw new Error("An error occurred");
+	};
+
 	return (
 		<div>
 			<h1>Clients Page</h1>
@@ -17,6 +25,7 @@ const ClientsPage = () => {
 					</li>
 				))}
 			</ul>
+			<button onClick={handleClick}>Go Back</button>
 		</div>
 	);
 };
