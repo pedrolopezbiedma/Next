@@ -1,8 +1,3 @@
---- Video 232 ---
-- Convert the project to typescript.
-- Create a Homepage page
-    - Include a div with an h1 'The Home Page'
-
 --- Video 233 ---
 - Create a second route, the about
 - For the content:
@@ -54,5 +49,154 @@ Create a button in any page and do a programatic navigation with it to any page.
 --- Video 243 ---
 Create an dummy error page and test that is working
 
---- Video 244 & 245 ---
+--- Video 244 & 245 & 246 ---
 Nothing
+
+--- Video 247 ---
+- Download the project.
+- Migrate to typescript.
+
+--- Video 248 ---
+- Create a home page
+- For the JSX, only a div with the h1 Home Page
+
+- Add an events page
+- For the JSX, only a div with h1 All Events
+
+- Add a event details page
+- For the JSX, the same than the last ones.
+
+- Create a catch all route for the filtered events pages.
+
+--- Vidoe 249 ---
+Download the data file and add it to the root folder of your project
+Download images from unsplash and put them into the correct folder ( check the dummy data for more info )
+
+--- Video 250 ---
+- En el home page, usa la funcion para coger los featuredEvents
+- For the content, we are going to create a new component called EventList
+    - this new component will receive a list of events
+    - For the content we will use:
+        <ul> 
+            map through the items and For each items, we will create a new component called EventItem
+            Put some dummy content in the new component and import it in the EventList
+
+--- Video 251 ---
+- For the new component, use the following content:
+    - <li> -> With key
+        <img> with source
+        <div>
+            <div>
+                <h2>TITLE
+                <div>
+                    <time>DATE
+                <div>
+                    <address>
+            <div>
+                <Link>Explore Event
+
+    - For the date, create a new Date().toLocaleDateString('en-US', {day: 'numeric', month:'long', year: 'numeric' }); with what comes from the dummy data
+    - For the address, create a formattedAddress by replacing ', ' for '\n' 
+    - For the image, take care of the src
+    - For the link you know what to do
+    - Now, pass the info to this component ( but not as in the course, but as a whole.)
+
+- Use the EventList where is needed.
+
+--- Video 252 ---
+- Download the styles file and then include:
+    - In the event item
+        - li -> Styles.item 
+        - div after the img --> Styles.content
+        - following div --> summary
+        div after the <h2> --> date
+        div after the previous ome, should be the address one --> address
+        div that holds the link --> actions
+    - In the event list
+        <ul> --> list
+
+--- Vidwo 253 & 254 ---
+- Create a button component
+    - The component will retrieve a Link that will have the text from the children and the href will also comes from the props.link
+    - Download the styles for the button.
+        - Use class btn within the Link
+    - Use that button within the Event Item and replace it with the link that you have there.
+- Download the icons folder and place it within your project. ( Include in Notion heroicIcons & unsplash as resources )
+    - Use the icons where you should ( For the link, wrap both things with span, the icon one receives the icon class )
+
+--- Video 255 ---
+- Now lets works in the Event Detail page
+- Use the event by the ID from the dummy data ( methods )
+    - If you you don't find any element, just return a <p>No found event</p> ( for now )
+    - Download the already created components
+    - For the content
+        - fragment
+        - EventSummary
+        - Event logistics
+        - Event content
+            - as children, a <p> with the event.description we have
+        - Check what the components needs to use the props
+- Test that everything is working
+
+--- Video 256 ---
+- The idea here is to use that component within the main layout, hence, within _app.js
+- To do this:
+    - We will create a header component that will return
+        - header
+            <div>
+                Link with text NextEvents and go to the starting page
+            <nav>
+                <ul>
+                    <li> with a Link to All Events and test All Events
+            Download the css file for the component
+
+    - We will create a layout component that will have a
+        fragment
+            Header we have created
+            <main>
+                {props.children}
+
+    - Use the layout within the _app.js
+
+--- Video 257 ---
+- Now lets go to all events page.
+- Get all events from the dummy data file
+- Reuse the EventList component to render all the events
+
+--- Video 258 ---
+- We are going to create a component to filter for the events within the all events page. ( Event Search )
+-In the JSX
+    - Form
+        <div>
+            <div>
+                <label> for year
+                <select> id year ( 2023, 2024 ) / Update the date in the dummy data
+
+            <div>
+                <label> for month
+                <select> for months
+            Button component with text Find Events
+- We need to update the button compoment to be a real button instead of a link
+    -Check if there is link
+        If not, return a button, pass the onclick tb and set classes to btn
+- Download the styles for the Event Search
+- Put this new component in the All Events page.
+
+--- Video 259 ---
+Lets add some logic to the EventSearch
+
+- Put a onSubmit method within the form ( preventDefault )
+- Get the value of the dropdown with useRef ( C'mon, use them, you hate them, you love them )
+- Now, in the parent component there will be a method to react to this, passed as a props to the Event Search. Call that method.
+- In the parent method, then navigate to events/year/month
+- Test that when navigating, it goes to the filtered page.
+
+--- Video 260 & 261 ---
+- get the values for the year & month from the url
+- use the proper method to get the events. ( Checking first if we do have filters, if not we have <p> Loading<p> with class 'center')
+- Check if no filteres, then return some message
+- use the event list with the obtained events
+- Download the zip and use the Results Title compoment above the Event list  ( date, removes a month )
+
+--- Video 264 ---
+To continue
