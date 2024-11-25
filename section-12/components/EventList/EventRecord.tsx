@@ -1,9 +1,9 @@
-import type { Event } from "../types";
+import type { Event } from "../../types";
 import Styles from "./EventRecord.module.css";
 import EventLink from "./EventLink";
-import AddressIcon from "../components/icons/address-icon";
-import DateIcon from "../components/icons/date-icon";
-import ArrowRightIcon from "../components/icons/arrow-right-icon";
+import AddressIcon from "../Icons/address-icon";
+import DateIcon from "../Icons/date-icon";
+import ArrowRightIcon from "../Icons/arrow-right-icon";
 
 interface EventRecordProps {
 	event: Event;
