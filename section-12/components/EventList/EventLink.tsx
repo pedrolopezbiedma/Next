@@ -3,11 +3,10 @@ import Styles from "./EventLink.module.css";
 
 interface EventLinkProps {
 	href?: string;
-	onClick?: () => void;
 	children: React.ReactNode;
 }
 
-const EventLink = ({ href, onClick, children }: EventLinkProps) => {
+const EventLink = ({ href, children }: EventLinkProps) => {
 	if (href) {
 		return (
 			<Link href={href} className={Styles.btn}>
@@ -15,11 +14,7 @@ const EventLink = ({ href, onClick, children }: EventLinkProps) => {
 			</Link>
 		);
 	}
-	return (
-		<button className={Styles.btn} onClick={onClick}>
-			{children}
-		</button>
-	);
+	return <button className={Styles.btn}>{children}</button>;
 };
 
 export default EventLink;
