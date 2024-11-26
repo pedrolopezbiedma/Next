@@ -1,27 +1,3 @@
---- Video 257 ---
-- Now lets go to all events page.
-- Get all events from the dummy data file
-- Reuse the EventList component to render all the events
-
---- Video 258 ---
-- We are going to create a component to filter for the events within the all events page. ( Event Search )
--In the JSX
-    - Form
-        <div>
-            <div>
-                <label> for year
-                <select> id year ( 2023, 2024 ) / Update the date in the dummy data
-
-            <div>
-                <label> for month
-                <select> for months
-            Button component with text Find Events
-- We need to update the button compoment to be a real button instead of a link
-    -Check if there is link
-        If not, return a button, pass the onclick tb and set classes to btn
-- Download the styles for the Event Search
-- Put this new component in the All Events page.
-
 --- Video 259 ---
 Lets add some logic to the EventSearch
 

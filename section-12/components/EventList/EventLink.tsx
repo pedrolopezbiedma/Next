@@ -2,15 +2,23 @@ import Link from "next/link";
 import Styles from "./EventLink.module.css";
 
 interface EventLinkProps {
-	href: string;
+	href?: string;
+	onClick?: () => void;
 	children: React.ReactNode;
 }
 
-const EventLink = ({ href, children }: EventLinkProps) => {
+const EventLink = ({ href, onClick, children }: EventLinkProps) => {
+	if (href) {
+		return (
+			<Link href={href} className={Styles.btn}>
+				{children}
+			</Link>
+		);
+	}
 	return (
-		<Link href={href} className={Styles.btn}>
+		<button className={Styles.btn} onClick={onClick}>
 			{children}
-		</Link>
+		</button>
 	);
 };
 
