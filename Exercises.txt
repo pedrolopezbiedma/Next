@@ -1,9 +1,0 @@
---- Video 260 & 261 ---
-- get the values for the year & month from the url
-- use the proper method to get the events. ( Checking first if we do have filters, if not we have <p> Loading<p> with class 'center')
-- Check if no filteres, then return some message
-- use the event list with the obtained events
-- Download the zip and use the Results Title compoment above the Event list  ( date, removes a month )
-
---- Video 264 ---
-To continue
