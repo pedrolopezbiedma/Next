@@ -4,7 +4,7 @@ interface LayoutProps {
 	children: React.ReactNode;
 }
 
-const LayoutComponent = ({ children }: LayoutProps) => {
+const MainLayout = ({ children }: LayoutProps) => {
 	return (
 		<>
 			<Header />
@@ -13,4 +13,4 @@ const LayoutComponent = ({ children }: LayoutProps) => {
 	);
 };
 
-export default LayoutComponent;
+export default MainLayout;
