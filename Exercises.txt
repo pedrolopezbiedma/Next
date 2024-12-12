@@ -1,7 +1,3 @@
---- Section 270 ---
-
-Use fs & path to read the data from the dummy data file that you have in the data folder, and use it within the JSX.
-
 --- Section 273 & 274 ---
 - Use ISR within the component and test that is not working in dev ( but you could test it in production, try it just out of curiosity )
 - Get a condition taht if we don't have products, we will use the error page.
