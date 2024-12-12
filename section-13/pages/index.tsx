@@ -1,13 +1,31 @@
 import React from "react";
 
-const HomePage = (props) => {
+interface HomePageProps {
+	products: { id: string; title: string; description: string }[];
+}
+
+const HomePage = ({ products }: HomePageProps) => {
 	return (
 		<ul>
-			<li>Product 1</li>
-			<li>Product 2</li>
-			<li>Product 3</li>
+			{products.map((product) => (
+				<li key={product.id}>{product.title}</li>
+			))}
 		</ul>
 	);
 };
+
+export async function getStaticProps() {
+	const products = [
+		{ id: "p1", title: "Product 4", description: "This is product 1" },
+		{ id: "p2", title: "Product 2", description: "This is product 2" },
+		{ id: "p3", title: "Product 3", description: "This is product 3" },
+	];
+
+	return {
+		props: {
+			products,
+		},
+	};
+}
 
 export default HomePage;
