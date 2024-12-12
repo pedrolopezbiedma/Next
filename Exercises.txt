@@ -1,0 +1,117 @@
+--- Section 269 ---
+
+- Download the json file and put it on a new 'data' folder of the project.
+- Use getStaticProps within the main page, hardcode some products and then use them within the JSX
+- Check how console.logs work out of curiosity
+
+--- Section 270 ---
+
+Use fs & path to read the data from the dummy data file that you have in the data folder, and use it within the JSX.
+
+--- Section 273 & 274 ---
+- Use ISR within the component and test that is not working in dev ( but you could test it in production, try it just out of curiosity )
+- Get a condition taht if we don't have products, we will use the error page.
+- Do the same with redirect
+
+--- Section 275 ---
+- Update the data to have a description.
+- The idea is to have a project detail page where we will show the description y the title.
+- Obtain rhe id from within the static logic and then use fs to read the data and get the proper product.
+- Use it within the component logic
+- Test it and you'll notice you have an issue.
+
+--- Section 276 & 277 & 278 & 279 ---
+- Solve the issue that you had by hardcoding the params
+- Check how the run build results
+
+--- Section 280 ---
+- Now, use the reading of the file to generate the paths
+- Set fallback to false finally;
+
+--- Section 281 ---
+- If you go to p4, you will not have data for that record.
+- Play with fallback = true and see if you can has a good solution ( No errors and Not found page )
+
+--- Section 283 ---
+- Create a user profile page.
+- We use SSR to retrieve a hardcoded name 'Pedro' and use it within the component to display it.
+
+--- Section 284 ---
+- Use the context to see the different properties that you have.
+
+--- Section 285 ---
+- Create a user profile details page and show the userID from the URL but using SSR
+
+--- Section 286 & 287 ---
+Nothing
+
+--- Section 288 ---
+- We add a new route called last-sales and create the dummy component.
+- Use firebase ( Realtime database ) to build a dummy api ( Call the project nextjs-course we will reuse it )
+- Use the api url.json to fetch its info
+- Show the content within the component.
+
+--- Section 290 ---
+- Switch all the logic to use useSWR()
+
+--- Section 291 ---
+- We want to do the very same fetch of the last-sales but with Static generation ( revalidate: 10 seconds )
+
+--- Section 292, 293, 294 ---
+- Nothing
+
+--- Section 295 ---
+- Download the snapshot for the project.
+- Convert it to typescript.
+- Use firebase ( the same project from before ) and create an events collection with the info from dummy data
+
+--- Section 296 ---
+- In home page we are going to use getStaticProps ( Explain in the code why )
+- To fetch the events, create an api file and fetch all events from firebase and then filter them by featured
+Update the page to use the props
+
+--- Section 297 ---
+
+We will work now in the event details page.
+Move the getEventById method from dummy data to the api file --> Update it to the logic we have here.
+To fetch the event we are going to use getStaticProps again ( explain why in the page )
+Update the page to use the props
+But this, won't work because....
+Then we need to create the indexes, and for that you know what you need to use:
+    To build them, get all the events like in the previous pages
+    Take care of fallback
+
+--- Section 298 ---
+Add revalidate to the home page, like for example 1800 seconds
+Also, for the detail page, we'll use 30 seconds
+Also for the detail page, we'll generate the ids for the featuredEvents and then play with the fallback to get the behaviour that you want ( Y check how it works )
+
+--- Section 299 ---
+Now, lets work on the All Events page.
+Here, we want to use Static Generation and fetch all events as we have been doing in the project already.
+Add a revalidate as you want, like 60 seconds
+
+--- Section 300 ---
+For the filtered events page, we'll use SSR
+Copy the already existing logic into that page and update it
+    If we dont have a valid Id, return a new prop called hasError and if so, use the fragment with invalid parameters
+Move also the logic to get the filteredEvents to the api file.
+
+--- Section 301, 302 & 303, 304 ---
+Nothing
+
+--- Section 305 ---
+Download the last snapshot of the events project, install dependencies, migrate to typescript and try that is working ( Maybe update the firebase url)
+
+--- Section 306 ---
+Set the title for the page to be NextJS Events for the main page
+Also a description
+
+--- Section 307 ---
+set more metadata for other pages ( for the event details, set the event title )
+
+--- Section 308, 309, 310, 311 ---
+Nothing
+
+--- Section 312 & 313 % 314 % 315 & 316, 317 ---
+Use Image component , use width = 250 and height = 160 ( Try using fill, should be available ) and in logictics 400 & 400
